@@ -1,17 +1,15 @@
 import {
-  FaBriefcase,
   FaEnvelope,
   FaGamepad,
-  FaHome,
-  FaPhone,
   FaSuitcase,
 } from "react-icons/fa";
 
 import Footer from "../components/Footer";
+import Profile from "../components/Profile";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
 
 export default function Home() {
-const {profile, error, loading} = useGitHubProfile("MarcosSSantana");
+  const { profile, error, loading } = useGitHubProfile("MarcosSSantana");
 
   if (error) {
     return (
@@ -51,28 +49,11 @@ const {profile, error, loading} = useGitHubProfile("MarcosSSantana");
         {/* Container */}
         <div className="max-w-[1100px] mx-auto pt-24 px-4">
           {/* Profile */}
-          <section className="flex flex-wrap gap-8 mb-10 items-center">
-            <img
-              src={profile.avatar_url}
-              alt="Avatar"
-              className="w-40 h-40 rounded-full object-cover shadow-lg border-4 border-white bg-white"
-            />
-            <div className="flex-1 min-w-[250px]">
-              <h1 className="font-['Montserrat'] text-3xl mb-2 text-[#1b2a36] font-bold">
-                Marcos Silva Santana
-              </h1>
-              <p className="flex items-center gap-2 text-[#6c757d] text-base mb-1">
-                <FaBriefcase className="text-green-500" /> Software Developer -{" "}
-                {profile.company}
-              </p>
-              <p className="flex items-center gap-2 text-[#6c757d] text-base mb-1">
-                <FaHome className="text-green-500" /> {profile.location}
-              </p>
-              <p className="flex items-center gap-2 text-[#6c757d] text-base mb-1">
-                <FaPhone className="text-green-500" /> +55 (16) 98162-8782
-              </p>
-            </div>
-          </section>
+          <Profile
+            profile={profile}
+            phone="+55 (16) 98162-8782"
+            position="Software Developer"
+          />
 
           {/* Projects */}
           <section className="mb-12">
