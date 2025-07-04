@@ -1,11 +1,8 @@
-import {
-  FaEnvelope,
-  FaGamepad,
-  FaSuitcase,
-} from "react-icons/fa";
+import { FaEnvelope, FaGamepad, FaSuitcase } from "react-icons/fa";
 
 import Footer from "../components/Footer";
 import Profile from "../components/Profile";
+import ProjectCard from "../components/ProjectCard";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
 
 export default function Home() {
@@ -128,29 +125,13 @@ export default function Home() {
                   link: "https://html5.gamedistribution.com/4086914c63db48a7a17f1b005cd0c53a/",
                 },
               ].map((proj, i) => (
-                <div
+                <ProjectCard
                   key={proj.title}
-                  className="bg-white rounded-xl shadow-lg p-7 transition-transform duration-300 hover:-translate-y-1 hover:scale-105 hover:bg-gray-50"
-                  style={{
-                    animation: `fadeInUp 0.8s forwards`,
-                    animationDelay: `${0.1 * (i + 1)}s`,
-                  }}
-                >
-                  <h5 className="mb-2 text-lg text-[#2e4a5a] font-['Montserrat'] font-semibold">
-                    {proj.title}
-                  </h5>
-                  <span className="text-[#4caf50] text-base block mb-2">
-                    {proj.tech}
-                  </span>
-                  <a
-                    href={proj.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block mt-2 px-6 py-2 bg-[#4caf50] text-white rounded-full font-semibold text-base shadow hover:bg-[#2e4a5a] transition"
-                  >
-                    View Project
-                  </a>
-                </div>
+                  title={proj.title}
+                  tech={proj.tech}
+                  link={proj.link}
+                  index={i}
+                />
               ))}
             </div>
           </section>
