@@ -1,13 +1,15 @@
-import { FaGamepad, FaSuitcase } from "react-icons/fa";
+import { FaGamepad, FaGraduationCap, FaSuitcase } from "react-icons/fa";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import InfoCard from "../components/InfoCard";
 import Profile from "../components/Profile";
 import ProjectCard from "../components/ProjectCard";
+import Section from "../components/Section";
 import { education } from "../data/education";
 import { projects } from "../data/projects";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
+import { workExperience } from "../data/workExperience";
 
 export default function Home() {
   const { profile, error, loading } = useGitHubProfile("MarcosSSantana");
@@ -52,10 +54,10 @@ export default function Home() {
           />
 
           {/* Projects */}
-          <section className="mb-12">
-            <div className="font-['Montserrat'] text-xl text-[#1b2a36] mb-6 border-l-4 border-[#4caf50] pl-3 font-semibold flex items-center gap-2">
-              <FaGamepad className="text-green-500 text-2xl" /> Projects
-            </div>
+          <Section
+            title="Projects"
+            icon={<FaGamepad className="text-green-500 text-2xl" />}
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
               {projects.map((proj, i) => (
                 <ProjectCard
@@ -67,15 +69,15 @@ export default function Home() {
                 />
               ))}
             </div>
-          </section>
+          </Section>
 
           {/* Work Experience */}
-          <section className="mb-12">
-            <div className="font-['Montserrat'] text-xl text-[#1b2a36] mb-6 border-l-4 border-[#4caf50] pl-3 font-semibold flex items-center gap-2">
-              <FaSuitcase className="text-green-500 text-2xl" /> Work Experience
-            </div>
+          <Section
+            title="Work Experience"
+            icon={<FaSuitcase className="text-green-500 text-2xl" />}
+          >
             <div className="flex flex-col gap-6">
-              {education.map((work, i) => (
+              {workExperience.map((work, i) => (
                 <InfoCard
                   title={work.title}
                   year={work.year}
@@ -84,13 +86,13 @@ export default function Home() {
                 />
               ))}
             </div>
-          </section>
+          </Section>
 
           {/* Education */}
-          <section className="mb-12">
-            <div className="font-['Montserrat'] text-xl text-[#1b2a36] mb-6 border-l-4 border-[#4caf50] pl-3 font-semibold flex items-center gap-2">
-              Educação
-            </div>
+          <Section
+            title="Educação"
+            icon={<FaGraduationCap className="text-green-500 text-2xl" />}
+          >
             <div className="flex flex-col gap-6">
               {education.map((edu, i) => (
                 <InfoCard
@@ -101,7 +103,7 @@ export default function Home() {
                 />
               ))}
             </div>
-          </section>
+          </Section>
         </div>
 
         <Footer />
