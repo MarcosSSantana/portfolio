@@ -4,6 +4,8 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Profile from "../components/Profile";
 import ProjectCard from "../components/ProjectCard";
+import { education } from "../data/education";
+import { projects } from "../data/projects";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
 
 export default function Home() {
@@ -54,73 +56,7 @@ export default function Home() {
               <FaGamepad className="text-green-500 text-2xl" /> Projects
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-7">
-              {[
-                {
-                  title: "Candy Rain",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, GSAP, Webpack, Typescript",
-                  link: "https://marcosssantana.github.io/candy-rain/",
-                },
-                {
-                  title: "Cartela Raspadinha",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, GSAP",
-                  link: "https://marcosssantana.github.io/cartela-raspadinha/",
-                },
-                {
-                  title: "Club (Prize Roulette)",
-                  tech: "Construct 3, JavaScript, HTML5, CSS3",
-                  link: "https://marcosssantana.github.io/club/",
-                },
-                {
-                  title: "Crash Soccer",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, Typescript",
-                  link: "https://marcosssantana.github.io/crash-soccer/",
-                },
-                {
-                  title: "Jogo da Velha",
-                  tech: "HTML5, CSS3, JavaScript (Canvas)",
-                  link: "https://marcosssantana.github.io/jogo-da-velha/",
-                },
-                {
-                  title: "Mach Words",
-                  tech: "Angular, TypeScript, HTML5, CSS3",
-                  link: "https://marcosssantana.github.io/mach-words/",
-                },
-                {
-                  title: "Match 3",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, Typescript",
-                  link: "https://marcosssantana.github.io/match3/",
-                },
-                {
-                  title: "Puzzle",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, Typescript",
-                  link: "https://marcosssantana.github.io/puzzle/",
-                },
-                {
-                  title: "Quiz",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS",
-                  link: "https://marcosssantana.github.io/quiz/",
-                },
-                {
-                  title: "Quiz Contábeis",
-                  tech: "Construct 3, JavaScript, HTML5, CSS3",
-                  link: "https://marcosssantana.github.io/quizcontabeis/",
-                },
-                {
-                  title: "Tic Tac Toe",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, Typescript",
-                  link: "https://marcosssantana.github.io/tic-tac-toe/",
-                },
-                {
-                  title: "Video Bingo",
-                  tech: "HTML5, CSS3, JavaScript, PixiJS, GSAP",
-                  link: "https://marcosssantana.github.io/video-bingo/",
-                },
-                {
-                  title: "Wind Soldier",
-                  tech: "HTML5, CSS3, JavaScript",
-                  link: "https://html5.gamedistribution.com/4086914c63db48a7a17f1b005cd0c53a/",
-                },
-              ].map((proj, i) => (
+              {projects.map((proj, i) => (
                 <ProjectCard
                   key={proj.title}
                   title={proj.title}
@@ -138,29 +74,7 @@ export default function Home() {
               <FaSuitcase className="text-green-500 text-2xl" /> Work Experience
             </div>
             <div className="flex flex-col gap-6">
-              {[
-                {
-                  title: "Game Dev - Front End / Squadra Digital",
-                  year: "May 2023 - Sep 2023",
-                  desc: "Creation of games for the web (Design, Tutorial and game functionality). HTML, CSS, JS, Canvas, PixiJS, Gsap, Typescript, Webpack, Nodejs, ReactJs; Scenario Modeling and Level Design.",
-                },
-                {
-                  title: "Game Developer / Esys Technology",
-                  year: "Jul 2015 - Dec 2021",
-                  desc: "Responsible for the development of the programming and interface of the games and new technologies aiming at the efficiency and performance of the environment where the games will be executed and integration with the mathematical engines through API.",
-                },
-                {
-                  title: "PHP Developer / Contábeis",
-                  year: "Dec 2021 - May 2023",
-                  desc: "PHP, Composer, PHPmailer, PHP-encryption, Mysql, Docker compose, Bootstrap 5, DataTables, SweetAlert2, Jquery, JavaScript, AdminLTE.",
-                },
-                {
-                  title:
-                    "Webmaster / Fast information telephony and tele service",
-                  year: "Dec 2014 - Jul 2015",
-                  desc: "Development and support of the company website, developing with: PHP, Java Script, HTML 5, CSS 3, JSON, MySql, MVC, Object Orientation, Bootstrap (CSS Framework) among others.",
-                },
-              ].map((work, i) => (
+              {education.map((work, i) => (
                 <div
                   key={work.title}
                   className="bg-white rounded-xl shadow-lg p-6 transition duration-300 hover:bg-gray-50"
@@ -188,24 +102,7 @@ export default function Home() {
               Educação
             </div>
             <div className="flex flex-col gap-6">
-              {[
-                {
-                  title: "Universidade Paulista - UNIP",
-                  year: "2015 - 2020",
-                  desc: "Analysis and systems development",
-                },
-                {
-                  title: "Senac São Paulo",
-                  year: "2013 - 2015",
-                  desc: "Computer programming",
-                },
-                {
-                  title:
-                    "Federal Institute of Education, Science and Technology of São Paulo - IFSP",
-                  year: "2012 - 2014",
-                  desc: "Computer technician for computers",
-                },
-              ].map((edu, i) => (
+              {education.map((edu, i) => (
                 <div
                   key={edu.title}
                   className="bg-white rounded-xl shadow-lg p-6 transition duration-300 hover:bg-gray-50"
