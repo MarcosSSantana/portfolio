@@ -2,6 +2,7 @@ import { FaGamepad, FaSuitcase } from "react-icons/fa";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import InfoCard from "../components/InfoCard";
 import Profile from "../components/Profile";
 import ProjectCard from "../components/ProjectCard";
 import { education } from "../data/education";
@@ -75,22 +76,12 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-6">
               {education.map((work, i) => (
-                <div
-                  key={work.title}
-                  className="bg-white rounded-xl shadow-lg p-6 transition duration-300 hover:bg-gray-50"
-                  style={{
-                    animation: `fadeInUp 0.8s forwards`,
-                    animationDelay: `${0.1 * (i + 1)}s`,
-                  }}
-                >
-                  <h5 className="mb-1 text-lg text-[#2e4a5a] font-['Montserrat'] font-semibold">
-                    {work.title}
-                  </h5>
-                  <span className="text-[#6c757d] text-sm block mb-1">
-                    {work.year}
-                  </span>
-                  <p className="text-[#6c757d] text-base">{work.desc}</p>
-                </div>
+                <InfoCard
+                  title={work.title}
+                  year={work.year}
+                  desc={work.desc}
+                  index={i}
+                />
               ))}
             </div>
           </section>
@@ -98,27 +89,16 @@ export default function Home() {
           {/* Education */}
           <section className="mb-12">
             <div className="font-['Montserrat'] text-xl text-[#1b2a36] mb-6 border-l-4 border-[#4caf50] pl-3 font-semibold flex items-center gap-2">
-              {/* Ícone removido pois FaMortarBoard não está definido */}
               Educação
             </div>
             <div className="flex flex-col gap-6">
               {education.map((edu, i) => (
-                <div
-                  key={edu.title}
-                  className="bg-white rounded-xl shadow-lg p-6 transition duration-300 hover:bg-gray-50"
-                  style={{
-                    animation: `fadeInUp 0.8s forwards`,
-                    animationDelay: `${0.1 * (i + 1)}s`,
-                  }}
-                >
-                  <h5 className="mb-1 text-lg text-[#2e4a5a] font-['Montserrat'] font-semibold">
-                    {edu.title}
-                  </h5>
-                  <span className="text-[#6c757d] text-sm block mb-1">
-                    {edu.year}
-                  </span>
-                  <p className="text-[#6c757d] text-base">{edu.desc}</p>
-                </div>
+                <InfoCard
+                  title={edu.title}
+                  year={edu.year}
+                  desc={edu.desc}
+                  index={i}
+                />
               ))}
             </div>
           </section>
