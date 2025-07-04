@@ -1,6 +1,6 @@
 import { FaEnvelope } from "react-icons/fa";
 
-interface HeaderProps {
+export interface HeaderProps {
   name: string;
   email: string;
 }
