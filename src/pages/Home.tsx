@@ -1,6 +1,7 @@
-import { FaEnvelope, FaGamepad, FaSuitcase } from "react-icons/fa";
+import { FaGamepad, FaSuitcase } from "react-icons/fa";
 
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Profile from "../components/Profile";
 import ProjectCard from "../components/ProjectCard";
 import { useGitHubProfile } from "../hooks/useGitHubProfile";
@@ -36,12 +37,7 @@ export default function Home() {
     return (
       <div className="bg-[#f5f6fa] min-h-screen text-[#222]">
         {/* Header */}
-        <header className="fixed top-0 left-0 right-0 bg-[#1b2a36] text-white shadow-lg z-50 flex items-center justify-between px-8 h-16 font-['Montserrat'] tracking-wide text-lg transition-colors">
-          <span>{profile.name}</span>
-          <span className="text-[#b2bec3] text-base flex items-center gap-2">
-            <FaEnvelope className="inline" /> marcosshotokan10@gmail.com
-          </span>
-        </header>
+        <Header name={profile.name} email="marcosshotokan10@gmail.com" />
 
         {/* Container */}
         <div className="max-w-[1100px] mx-auto pt-24 px-4">
