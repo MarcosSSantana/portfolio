@@ -18,7 +18,7 @@ const Profile = ({ profile, phone, position }: ProfileProps) => {
       />
       <div className="flex-1 min-w-[250px]">
         <h1 className="font-['Montserrat'] text-3xl mb-2 text-[#1b2a36] font-bold">
-          Marcos Silva Santana
+          {profile.name}
         </h1>
         <p className="flex items-center gap-2 text-[#6c757d] text-base mb-1">
           <FaBriefcase className="text-green-500" /> {position} -{" "}
