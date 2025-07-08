@@ -2,7 +2,7 @@ import { FaGamepad, FaGraduationCap, FaSuitcase } from "react-icons/fa";
 
 import Footer from "../components/Footer";
 import Header from "../components/Header/Header";
-import InfoCard from "../components/InfoCard";
+import InfoCard from "../components/InfoCard/InfoCard";
 import Profile from "../components/Profile";
 import ProjectCard from "../components/ProjectCard";
 import Section from "../components/Section";
